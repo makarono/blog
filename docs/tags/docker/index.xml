@@ -13,19 +13,19 @@
     
     <item>
       <title>Docker中CMD与ENTRYPOINT的简明理解</title>
-      <link>http://blog.imroc.io/post/docker/docker%E4%B8%ADcmd%E4%B8%8Eentrypoint%E7%9A%84%E7%AE%80%E6%98%8E%E7%90%86%E8%A7%A3/</link>
+      <link>http://blog.imroc.io/post/docker/understand-docker-cmd-entrypoint/</link>
       <pubDate>Wed, 06 Sep 2017 16:35:18 +0800</pubDate>
       
-      <guid>http://blog.imroc.io/post/docker/docker%E4%B8%ADcmd%E4%B8%8Eentrypoint%E7%9A%84%E7%AE%80%E6%98%8E%E7%90%86%E8%A7%A3/</guid>
+      <guid>http://blog.imroc.io/post/docker/understand-docker-cmd-entrypoint/</guid>
       <description>CMD提供容器启动的默认行为，运行不指定运行的命令及参数，会默认执行CMD中的。 例如hello镜像的Dockerfile中有 CMD [&amp;quot;echo&amp;quot;,&amp;quot;&#39;hello world&#39;&amp;quot;] 执行 docker run h</description>
     </item>
     
     <item>
       <title>Docker容器间通信</title>
-      <link>http://blog.imroc.io/post/docker/docker%E5%AE%B9%E5%99%A8%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
+      <link>http://blog.imroc.io/post/docker/docker-network-communication/</link>
       <pubDate>Wed, 06 Sep 2017 16:35:18 +0800</pubDate>
       
-      <guid>http://blog.imroc.io/post/docker/docker%E5%AE%B9%E5%99%A8%E9%97%B4%E9%80%9A%E4%BF%A1/</guid>
+      <guid>http://blog.imroc.io/post/docker/docker-network-communication/</guid>
       <description>容器每次启动时会分配个一个IP地址，这个IP地址只在宿主主机内部有用，其它主机上的程序无法访问此IP 一台机器上的docker容器之间默认是可</description>
     </item>
     
