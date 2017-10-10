@@ -1,5 +1,5 @@
 ---
-title: "About"
+title: "关于"
 menu: "main"
 weight: 50
 
