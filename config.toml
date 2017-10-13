@@ -1,4 +1,4 @@
-baseURL = "http://blog.imroc.io/"
+baseURL = "http://imroc.io/"
 languageCode = "zh-CN"
 defaultContentLanguage = "zh-CN"
 title = "roc"
