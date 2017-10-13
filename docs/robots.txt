@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: http://blog.imroc.io/sitemap.xml
+Sitemap: http://imroc.io/sitemap.xml
