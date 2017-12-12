@@ -5,7 +5,8 @@
     <link>http://imroc.io/categories/</link>
     <description>Recent content in Categories on roc</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <managingEditor>roc@imroc.io (roc)</managingEditor>
+    <webMaster>roc@imroc.io (roc)</webMaster>
     
 	<atom:link href="http://imroc.io/categories/index.xml" rel="self" type="application/rss+xml" />
     

@@ -5,7 +5,8 @@
     <link>http://imroc.io/tags/</link>
     <description>Recent content in Tags on roc</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <managingEditor>roc@imroc.io (roc)</managingEditor>
+    <webMaster>roc@imroc.io (roc)</webMaster>
     <lastBuildDate>Wed, 06 Sep 2017 16:35:18 +0800</lastBuildDate>
     
 	<atom:link href="http://imroc.io/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +16,7 @@
       <title>Docker</title>
       <link>http://imroc.io/tags/docker/</link>
       <pubDate>Wed, 06 Sep 2017 16:35:18 +0800</pubDate>
-      
+      <author>roc@imroc.io (roc)</author>
       <guid>http://imroc.io/tags/docker/</guid>
       <description></description>
     </item>
@@ -24,7 +25,7 @@
       <title>Golang</title>
       <link>http://imroc.io/tags/golang/</link>
       <pubDate>Wed, 06 Sep 2017 15:35:18 +0800</pubDate>
-      
+      <author>roc@imroc.io (roc)</author>
       <guid>http://imroc.io/tags/golang/</guid>
       <description></description>
     </item>
@@ -33,7 +34,7 @@
       <title>架构</title>
       <link>http://imroc.io/tags/%E6%9E%B6%E6%9E%84/</link>
       <pubDate>Wed, 06 Sep 2017 15:52:18 +0800</pubDate>
-      
+      <author>roc@imroc.io (roc)</author>
       <guid>http://imroc.io/tags/%E6%9E%B6%E6%9E%84/</guid>
       <description></description>
     </item>
@@ -42,7 +43,7 @@
       <title>算法</title>
       <link>http://imroc.io/tags/%E7%AE%97%E6%B3%95/</link>
       <pubDate>Tue, 05 Sep 2017 15:35:18 +0800</pubDate>
-      
+      <author>roc@imroc.io (roc)</author>
       <guid>http://imroc.io/tags/%E7%AE%97%E6%B3%95/</guid>
       <description></description>
     </item>

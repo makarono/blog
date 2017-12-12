@@ -7,12 +7,12 @@ keywords: [ "golang", "go" ]
 tags: [ "golang" ]
 
 # you can close something for this content if you open it in config.toml.
-comment: false
-toc: false
+# comment: false
+# toc: false
 # you can define another contentCopyright. e.g. contentCopyright: "This is an another copyright."
-contentCopyright: false
-reward: false
-mathjax: false
+# contentCopyright: false
+# reward: false
+# mathjax: false
 ---
 
 很多时候我们需要让main函数不退出，让它在后台一直执行，例如：
