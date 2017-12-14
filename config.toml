@@ -1,4 +1,4 @@
-baseURL = "https://imroc.io/"
+baseURL = "http://imroc.io/"
 languageCode = "zh-cn"
 title = "roc"
 theme = "beautifulhugo"
