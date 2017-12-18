@@ -4,6 +4,7 @@ date: 2017-09-06T15:35:18+08:00
 lastmod: 2017-09-06T15:35:18+08:00
 draft: false
 keywords: [ "golang", "go" ]
+categories: "golang"
 tags: [ "golang" ]
 
 # you can close something for this content if you open it in config.toml.

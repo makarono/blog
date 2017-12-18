@@ -3,6 +3,7 @@ title: "Docker容器间通信"
 date: 2017-09-06T16:35:18+08:00
 lastmod: 2017-09-06T16:35:18+08:00
 draft: false
+categories: ["docker"]
 tags: [ "docker" ]
 
 # you can close something for this content if you open it in config.toml.
