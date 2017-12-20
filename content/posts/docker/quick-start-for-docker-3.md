@@ -1,116 +1,91 @@
 ---
-title: "Docker快速入门（三）常用命令与技巧"
+title: "Docker快速入门（三）在国内如何快速安装Docker与镜像加速器配置"
 date: 2017-12-19T16:27:07+08:00
 categories: ["docker"]
 tags: [ "docker", "Docker快速入门" ]
 ---
 
-# 常用命令
-### 列出机器上的镜像
+# 快速安装Docker
+Docker官方文档给出的安装方式会比较慢，因为提供软件源的服务器在国外，下载速度有时慢的像蜗牛，简直不能忍，现在就给大家介绍如何在国内愉快的安装Docker
+
+### 通用安装
+适用于Ubuntu，Debian, Centos等大部分Linux
 ``` sh
-docker images
+curl -sSL https://get.daocloud.io/docker | sh
 ```
-![docker images](https://res.cloudinary.com/imroc/image/upload/v1513675136/blog/docker/docker-images.png)
-
-### 拉取镜像
+### Ubuntu 14.04/16.04
+#### 一键安装
 ``` sh
-docker pull openjdk # 等同于 docker pull openjdk:latest
-
-docker pull openjdk:jre-slim # 指定了tag
-
-docker pull hub.imroc.io:5000/imroc/myapp:1.2 # 拉取私有仓库的镜像
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
 ```
-### 上传镜像
+#### 分步骤安装
 ``` sh
-docker push imroc/myapp:1atest # 上传到Docker Hub公有仓库
+# step 1: 安装必要的一些系统工具
+sudo apt-get update
+sudo apt-get -y install apt-transport-https ca-certificates curl software-properties-common
+# step 2: 安装GPG证书
+curl -fsSL http://mirrors.aliyun.com/docker-ce/linux/ubuntu/gpg | sudo apt-key add -
+# Step 3: 写入软件源信息
+sudo add-apt-repository "deb [arch=amd64] http://mirrors.aliyun.com/docker-ce/linux/ubuntu $(lsb_release -cs) stable"
+# Step 4: 更新并安装 Docker-CE
+sudo apt-get -y update
+sudo apt-get -y install docker-ce
 
-docker push hub.imroc.io:5000/imroc/myqpp:1.2 # 上传到私有仓库
+# 安装指定版本的Docker-CE:
+# Step 1: 查找Docker-CE的版本:
+# apt-cache madison docker-ce
+#   docker-ce | 17.03.1~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages
+#   docker-ce | 17.03.0~ce-0~ubuntu-xenial | http://mirrors.aliyun.com/docker-ce/linux/ubuntu xenial/stable amd64 Packages
+# Step 2: 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.1~ce-0~ubuntu-xenial)
+# sudo apt-get -y install docker-ce=[VERSION]
 ```
 
-### 删除镜像
+
+### CentOS 7
 ``` sh
-# 删除指定名称的镜像
-docker rmi imroc/myapp:latest
+# step 1: 安装必要的一些系统工具
+sudo yum install -y yum-utils device-mapper-persistent-data lvm2
+# Step 2: 添加软件源信息
+sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+# Step 3: 更新并安装 Docker-CE
+sudo yum makecache fast
+sudo yum -y install docker-ce
+# Step 4: 开启Docker服务
+sudo service docker start
 
-# 删除没有tag的镜像（比如每次编译新镜像都会打latest这个tag，导致旧的latest镜像没了tag）
-docker rmi `docker images -f "dangling=true" -q`
-
-# 删除所有镜像
-docker rmi `docker images -q`
+# 注意：
+# 官方软件源默认启用了最新的软件，您可以通过编辑软件源的方式获取各个版本的软件包。例如官方并没有将测试版本的软件源置为可用，你可以通过以下方式开启。同理可以开启各种测试版本等。
+# vim /etc/yum.repos.d/docker-ee.repo
+#   将 [docker-ce-test] 下方的 enabled=0 修改为 enabled=1
+#
+# 安装指定版本的Docker-CE:
+# Step 1: 查找Docker-CE的版本:
+# yum list docker-ce.x86_64 --showduplicates | sort -r
+#   Loading mirror speeds from cached hostfile
+#   Loaded plugins: branch, fastestmirror, langpacks
+#   docker-ce.x86_64            17.03.1.ce-1.el7.centos            docker-ce-stable
+#   docker-ce.x86_64            17.03.1.ce-1.el7.centos            @docker-ce-stable
+#   docker-ce.x86_64            17.03.0.ce-1.el7.centos            docker-ce-stable
+#   Available Packages
+# Step2 : 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.0.ce.1-1.el7.centos)
+# sudo yum -y install docker-ce-[VERSION]
 ```
 
+### CentOS 6
+``` sh
+yum install –y http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
+yum install –y docker-io
+```
 
-### 列出机器上的容器
-##### 1. 查看正在运行的
+# 配置加速器
+比较常用的镜像加速器是阿里云和Daocloud的，都是免费的，不过加速器地址并不是公有的，每个人不一样，要获取你自己的加速地址前提是需要登录。
+
+## 阿里云
+登录后进入 [https://cr.console.aliyun.com/#/accelerator](https://cr.console.aliyun.com/#/accelerator)
   
-``` sh
-docker ps
-```
-![docker ps](https://res.cloudinary.com/imroc/image/upload/v1513687714/blog/docker/docker-ps.png)
+![aliyun](https://res.cloudinary.com/imroc/image/upload/v1513735608/blog/docker/aliyun-accelerator.png)
+
+## Daocloud
+登录后进入 [https://www.daocloud.io/mirror#accelerator-doc](https://www.daocloud.io/mirror#accelerator-doc)
   
-##### 2. 查看所有的 (包含已经停止并且没有删除的容器)
-
-``` sh
-docker ps -a
-```
-![docker ps -a](https://res.cloudinary.com/imroc/image/upload/v1513688020/blog/docker/docker-ps-a.png)
-  
-### 启动容器
-``` sh
-# 前台运行，指定镜像为ubuntu，并指定要运行的是bash命令行
-docker run -it ubuntu /bin/bash 
-
-# 后台运行
-docker run -d imroc/myapp:1.2 
-
-# 给容器起别名
-docker run --name app imroc/myapp:1.2 
-
-# 映射宿主机5000端口到容器的80端口，即访问机器的5000端口相当于访问容器的80端口
-docker run -p 5000:80 imroc/myapp:1.2 
-
-# 挂载当前目录的配置文件到容器里
-docker run -v $PWD:/config.yaml:/app/config.yaml imroc/myapp:1.2 
-
-# 当容器停止就将其删除
-docker run --rm imroc/myapp:1.2
-```
-
-### 删除容器
-``` sh
-# 通过别名删除
-docker rm app
-
-# 通过id删除
-docker rm 4a19c300e0c0
-
-# 删除全部容器
-docker rm $(docker ps -a -q)
-
-# 删除已停止的容器
-docker rm $(docker ps -f status=exited -q)
-```
-
-### 进入已运行的容器内部 (进入容器内的命令行操作)
-``` sh
-# 进入别名为app的容器，终端为/bin/sh
-docker exec -it app /bin/sh
-
-# 进入id为c62874e3750a的容器，终端为/bin/bash（有些容器可能只有/bin/sh）
-docker exec -it c62874e3750a /bin/bash
-```
-
-### 容器与宿主机之间文件拷贝
-``` sh
-# 将当前目录的配置文件拷贝到别名为app的容器里
-docker cp ./config.toml app:/app/config.toml
-
-# 将id为c62874e3750a的容器中的配置文件拷贝到当前目录
-docker cp c62874e3750a:/app/config.toml ./config.toml
-```
-
-### 查看容器或镜像详细信息
-``` sh
-# name可以为镜像id或名称，也可以为容器id或别名
-docker inspect name
-```
+![daocloud](https://res.cloudinary.com/imroc/image/upload/v1513734634/blog/docker/daocloud-accelerator.png)
