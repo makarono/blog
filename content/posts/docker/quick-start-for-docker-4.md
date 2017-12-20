@@ -83,6 +83,9 @@ docker run -v $PWD:/config.yaml:/app/config.yaml imroc/myapp:1.2
 
 # 当容器停止就将其删除
 docker run --rm imroc/myapp:1.2
+
+# 连接别名为mysql的容器，使得该容器可以通过db这个地址访问mysql容器（修改hosts文件）
+docker run -link mysql:db imroc/myapp
 ```
 
 ### 停止容器
