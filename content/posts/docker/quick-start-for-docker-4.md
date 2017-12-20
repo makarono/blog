@@ -38,6 +38,16 @@ docker rmi `docker images -f "dangling=true" -q`
 docker rmi `docker images -q`
 ```
 
+### 镜像tar包保存与载入
+在有些情况下，我们无法拉取镜像，比如网络原因或者没有私有仓库，这时可以将镜像保存为tar包文件，拷到其它机器上然后载入到docker里，然后就能愉快的使用镜像了
+``` sh
+# 保存
+docker save –o ./myapp.tar myapp:latest
+
+# 载入
+docker load —i myapp.tar
+```
+
 
 ### 列出机器上的容器
 ##### 1. 查看正在运行的
@@ -128,6 +138,12 @@ docker logs c62874e3750a
 # 限制最后N行
 docker logs --tail 10 -f app
 ```
+
+### 查看容器内运行的进程
+``` sh
+docker top c62874e3750a
+```
+![docker top](https://res.cloudinary.com/imroc/image/upload/v1513738482/blog/docker/docker-top.png)
 
 ### 容器与宿主机之间文件拷贝
 ``` sh
