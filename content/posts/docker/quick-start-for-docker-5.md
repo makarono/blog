@@ -52,7 +52,7 @@ services:
 ``` sh
 docker-compose up -d
 ```
-![docker compose up -d](https://res.cloudinary.com/imroc/image/upload/v1513752292/blog/docker/docker-compose-up.png)
+![docker compose up -d](https://res.cloudinary.com/imroc/image/upload/v1513753125/blog/docker/docker-compose-up.png)
 
 ### 查看运行状态
 ``` sh
@@ -64,4 +64,4 @@ docker-compose ps
 ``` sh
 docker-compose down
 ```
-![docker compose down](https://res.cloudinary.com/imroc/image/upload/v1513752292/blog/docker/docker-compose-down.png)
+![docker compose down](https://res.cloudinary.com/imroc/image/upload/v1513753125/blog/docker/docker-compose-down.png)
