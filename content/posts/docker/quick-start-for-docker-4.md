@@ -75,6 +75,24 @@ docker run -v $PWD:/config.yaml:/app/config.yaml imroc/myapp:1.2
 docker run --rm imroc/myapp:1.2
 ```
 
+### 停止容器
+``` sh
+# 通过容器别名
+docker stop app
+
+# 通过容器id
+docker stop c62874e3750a
+
+# 限定停止超时时间(单位：秒)
+# 默认的stop是发送SIGTERM信号等待程序停止，
+# 如果超过10秒还没停止才发送SIGKILL信号强制kill进程，
+# 通过 -t 参数可以改变默认超时时间
+docker stop -t 20 app
+
+# 强制停止容器(直接发送SIGKILL信号)
+docker kill app
+```
+
 ### 删除容器
 ``` sh
 # 通过别名删除
@@ -97,6 +115,18 @@ docker exec -it app /bin/sh
 
 # 进入id为c62874e3750a的容器，终端为/bin/bash（有些容器可能只有/bin/sh）
 docker exec -it c62874e3750a /bin/bash
+```
+
+### 查看后台运行容器的标准输出
+``` sh
+# 查看全部输出
+docker logs c62874e3750a
+
+# 查看全部输出并实时追加最新输出
+docker logs c62874e3750a
+
+# 限制最后N行
+docker logs --tail 10 -f app
 ```
 
 ### 容器与宿主机之间文件拷贝
