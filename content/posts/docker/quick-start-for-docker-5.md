@@ -38,7 +38,9 @@ services:
       - ./data:/data/web
     working_dir: /web # 改变当前工作目录
     command: python app.py # 改变默认启动命令
-    depends_on: db # 依赖db这个service
+    depends_on: 
+      - db # 依赖db这个service
+      - redis # 依赖redis这个service
   db:
     image: mysql:5.6
   redis:
