@@ -72,7 +72,10 @@ docker run -it ubuntu /bin/bash
 # 后台运行
 docker run -d imroc/myapp:1.2 
 
-# 给容器起别名
+# 后台运行，如果程序挂掉就自动重启
+docker run -d --restart always imroc/myapp:1.2 
+
+# 给容器起别名（方便后续命令操作容器）
 docker run --name app imroc/myapp:1.2 
 
 # 映射宿主机5000端口到容器的80端口，
