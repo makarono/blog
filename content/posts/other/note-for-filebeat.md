@@ -21,8 +21,8 @@ tags: ["filebeat"]
 ### crawler, prospector, harvester
 `crawler` 是用来采集数据的爬虫，也是filebeat的关键，管理一个或多个 `prospector` ，一个 `prospector` 是一批文件的采集管理器，可管理某个文件或用通配符匹配的多个文件，它管理一个或多个 `harvester` ，每个 `harvester` 采集某个特定的文件。
 
-注：
-1. `prospector` 是抽象成接口的，文件不仅仅可以是磁盘上的文件，还可以是标准输入、redis、docker。
+注：  
+1. `prospector` 是抽象成接口的，文件不仅仅可以是磁盘上的文件，还可以是标准输入、redis、docker。  
 2. `github.com/elastic/beats/filebeat/prospector` 包提供接口和 `Register()` 函数来注册接口的实现，下面的子包就是 `prospector` 的实现。用的最多的就是下面的 `log` 包实现的 `prospector` 了，用来采集磁盘上的文件。
 
 
