@@ -9,6 +9,15 @@ tags: [ "docker", "Docker快速入门" ]
 使用docker最常用的系统莫过于ubuntu和centos了，一般有两种方式，一种是直接用系统自带的源安装，另一种是官方的源安装。前者安装方便，但不是最新版，后者是最新版，但在国内安装会比较慢，后面会将快速安装的方法。
 
 # 自带源安装(稳定可靠但非最新版)
+### Ubuntu
+``` sh
+sudo apt-get install -y docker
+```
+
+### CentOS
+``` sh
+sudo yum install -y docker
+```
 
 # 官方源安装(最新版)
 此方式装的是`docker-ce`，即docker社区版，利用国内的docker官方源镜像，加速下载安装。  
