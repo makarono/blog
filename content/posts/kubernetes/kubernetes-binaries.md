@@ -19,3 +19,8 @@ Github Release压缩包: [https://pan.baidu.com/s/1cHdKx4](https://pan.baidu.com
 ## v1.8.6
 Github Release压缩包: [https://pan.baidu.com/s/1c1Fx6ms](https://pan.baidu.com/s/1c1Fx6ms)  
 程序二进制： [https://pan.baidu.com/s/1o7LiM2e](https://pan.baidu.com/s/1o7LiM2e)  
+
+## v1.8.5
+Github Release压缩包: [https://pan.baidu.com/s/1eS4e0FK](https://pan.baidu.com/s/1eS4e0FK)  
+程序二进制： [https://pan.baidu.com/s/1o8BpB54](https://pan.baidu.com/s/1o8BpB54)  
+
