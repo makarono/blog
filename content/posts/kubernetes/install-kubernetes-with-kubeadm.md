@@ -6,6 +6,73 @@ categories: ["kubernetes"]
 tags: ["docker", "kubernetes", "kubeadm"]
 ---
 
+# 集群详情
+1. OS: CentOS Linux release 7.4.1708 (Core) 3.10.0-693.2.1.el7.x86_64
+2. Kubernetes 1.9
+3. Docker 17.03.2-ce
+
+
+# 所有机器上的准备操作
+
+### 修改系统配置
+开启`bridge-nf-call-iptables`:
+``` sh
+echo "1" > /proc/sys/net/bridge/bridge-nf-call-iptables
+```
+关闭SELinux:
+``` sh
+vi /etc/selinux/config
+```
+确保`SELINUX=disabled`，修改后重启一下，如果本身就是`disabled`就不用管。
+
+### 安装docker
+**注意：**不要安装`docker-ce`，kubeadm初始化时会作一些检查，centos的docker软件包不推荐`docker-ce`，直接是`docker`:
+``` sh
+sudo yum install -y docker
+systemctl enable docker && systemctl start docker
+```
+
+### 安装kubelet kubeadm kubectl
+添加阿里云镜像：
+``` sh
+sudo cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+[kubernetes]
+name=Kubernetes
+baseurl=http://mirrors.aliyun.com/kubernetes/yum/repos/kubernetes-el7-x86_64
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=http://mirrors.aliyun.com/kubernetes/yum/doc/yum-key.gpg http://mirrors.aliyun.com/kubernetes/yum/doc/rpm-package-key.gpg
+EOF
+```
+安装：
+``` sh
+sudo yum install -y kubelet kubeadm kubectl
+sudo systemctl enable kubelet && sudo systemctl start kubelet
+```
+
+# Master上的操作
+
+### 使用kubeadm初始化master
+编写kubeadm初始化所需的配置文件:
+``` sh
+vi kubeadm.yml
+```
+内容如下：
+``` yaml
+apiVersion: kubeadm.k8s.io/v1alpha1
+kind: MasterConfiguration
+imageRepository: gcrio
+kubernetesVersion: v1.9.0
+networking:
+  podSubnet: 10.10.0.0/16
+```
+执行初始化命令：
+``` sh
+kubeadm init --config kubeadm.yml --pod-network-cidr=10.10.0.0/16
+```
+
+## 安装 kubeadm
 ## 依赖
 ebtables kubernetes-cni socat
 
