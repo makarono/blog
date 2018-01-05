@@ -5,20 +5,16 @@ categories: ["docker"]
 tags: [ "docker", "Docker快速入门" ]
 ---
 
-# 快速安装Docker
-Docker官方文档给出的安装方式会比较慢，因为提供软件源的服务器在国外，下载速度有时慢的像蜗牛，简直不能忍，现在就给大家介绍如何在国内愉快的安装Docker
+# 前言
+使用docker最常用的系统莫过于ubuntu和centos了，一般有两种方式，一种是直接用系统自带的源安装，另一种是官方的源安装。前者安装方便，但不是最新版，后者是最新版，但在国内安装会比较慢，后面会将快速安装的方法。
 
-### 通用安装
-适用于Ubuntu，Debian, Centos等大部分Linux
-``` sh
-curl -sSL https://get.daocloud.io/docker | sh
-```
+# 自带源安装(稳定可靠但非最新版)
+
+# 官方源安装(最新版)
+此方式装的是`docker-ce`，即docker社区版，利用国内的docker官方源镜像，加速下载安装。  
+注：Docker官方文档给出的安装方式会比较慢，因为提供软件源的服务器在国外，下载速度有时慢的像蜗牛，简直不能忍，现在就给大家介绍如何在国内愉快的安装Docker
+
 ### Ubuntu 14.04/16.04
-#### 一键安装
-``` sh
-curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
-```
-#### 分步骤安装
 ``` sh
 # step 1: 安装必要的一些系统工具
 sudo apt-get update
@@ -39,7 +35,6 @@ sudo apt-get -y install docker-ce
 # Step 2: 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.1~ce-0~ubuntu-xenial)
 # sudo apt-get -y install docker-ce=[VERSION]
 ```
-
 
 ### CentOS 7
 ``` sh
@@ -69,12 +64,6 @@ sudo service docker start
 #   Available Packages
 # Step2 : 安装指定版本的Docker-CE: (VERSION 例如上面的 17.03.0.ce.1-1.el7.centos)
 # sudo yum -y install docker-ce-[VERSION]
-```
-
-### CentOS 6
-``` sh
-yum install –y http://mirrors.yun-idc.com/epel/6/i386/epel-release-6-8.noarch.rpm
-yum install –y docker-io
 ```
 
 # 配置加速器
