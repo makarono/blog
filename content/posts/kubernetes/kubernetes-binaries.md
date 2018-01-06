@@ -7,7 +7,7 @@ tags: ["docker", "kubernetes"]
 ---
 
 # 前言
-由于国内网络的特殊性，安装Kubernetes很多时候会采用二进制方式部署，我将涉及到的二进制传到百度云，方便大家下载。  
+由于国内网络的特殊性，安装Kubernetes很多时候会采用二进制方式部署，我将涉及到的二进制利用脚本传到百度云，方便大家下载，脚本开源在：[https://github.com/imroc/k8s_baiduyun_uploader](https://github.com/imroc/k8s_baiduyun_uploader)。  
   
 Kubernetes在Github的[Release](https://github.com/kubernetes/kubernetes/releases)页面其实已经有压缩包下载，但是在国内下载很慢，而且里面并不包含安装所需的程序二进制文件，需要执行里面的`./kubernetes/cluster/get-kube-binaries.sh`这个脚本去下载得到文件`./kubernetes/server/kubernetes-server-linux-amd64.tar.gz`，大概三四百兆的样子，然而这在国内并不能直接下载。
 
