@@ -20,6 +20,6 @@ Kubernetes在Github的[Release](https://github.com/kubernetes/kubernetes/release
 链接：[https://pan.baidu.com/s/1dFrVjHZ](https://pan.baidu.com/s/1dFrVjHZ)
 
 
-# k8s自身组件下载链接
+# etcd下载链接
 文件名包含版本号，完全同步自Github的[Release](https://github.com/coreos/etcd/releases)页面（国内下载很慢很慢，而且容易失败），所以同步到百度云供大家下载：  
 链接：[https://pan.baidu.com/s/1pLgfDk3](https://pan.baidu.com/s/1pLgfDk3)
