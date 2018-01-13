@@ -23,3 +23,7 @@ Kubernetes在Github的[Release](https://github.com/kubernetes/kubernetes/release
 # etcd下载链接
 文件名包含版本号，完全同步自Github的[Release](https://github.com/coreos/etcd/releases)页面（国内下载很慢很慢，而且容易失败），所以同步到百度云供大家下载：  
 链接：[https://pan.baidu.com/s/1pLgfDk3](https://pan.baidu.com/s/1pLgfDk3)
+
+# helm下载链接
+helm是kubernetes包管理工具，二进制文件也是同步至Github的[Release](https://github.com/kubernetes/helm/releases)页面：  
+链接：[https://pan.baidu.com/s/1bpXxhuf](https://pan.baidu.com/s/1bpXxhuf)
