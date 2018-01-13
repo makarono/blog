@@ -21,7 +21,6 @@ pygmentCodeFences = true
   comments = true
   algolia = "6a65fd1d25daa9b3ba8ae02715023e72" # API key
 
-
 [[menu.main]]
     identifier = "Categories"
     name = "Categories"
@@ -46,14 +45,24 @@ pygmentCodeFences = true
     weight = 3
 
 [[menu.main]]
+    name = "Books"
+    weight = 2
+
+[[menu.main]]
+    parent = "Books"
+    name = "Kubernetes The Gradual Way"
+    url = "kubernetes-the-gradual-way"
+    weight = 1
+
+[[menu.main]]
     name = "Tags"
     url = "tags"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     name = "About"
     url = "about"
-    weight = 3
+    weight = 4
 
 
 [Author]
