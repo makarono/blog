@@ -21,6 +21,19 @@ pygmentCodeFences = true
   comments = true
   description = "imroc.io|roc的博客|Cloud Native|Kubernetes|Go|Golang"
 
+
+[[Params.bigimg]]
+src = "https://res.cloudinary.com/imroc/image/upload/v1515849754/blog/banner/hacker.jpg"
+desc = "Hacker"
+
+[[Params.bigimg]]
+src = "https://res.cloudinary.com/imroc/image/upload/v1515849764/blog/banner/kubernetes.png"
+desc = "Kubernetes"
+
+[[Params.bigimg]]
+src = "http://res.cloudinary.com/imroc/image/upload/v1515849756/blog/banner/cloud_computing.jpg"
+desc = "Cloud Computing"
+
 [[menu.main]]
     identifier = "Categories"
     name = "Categories"
