@@ -19,7 +19,7 @@ pygmentCodeFences = true
   commit = false
   rss = true
   comments = true
-  algolia = "6a65fd1d25daa9b3ba8ae02715023e72" # API key
+  description = "imroc.io|roc的博客|Cloud Native|Kubernetes|Go|Golang"
 
 [[menu.main]]
     identifier = "Categories"
