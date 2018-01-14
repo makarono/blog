@@ -1,7 +1,7 @@
 baseURL = "https://imroc.io/"
 languageCode = "zh-cn"
 title = "roc"
-theme = "beautifulhugo"
+theme = "xhugo"
 DefaultContentLanguage = "en"
 hasCJKLanguage = true
 metaDataFormat = "yaml"
@@ -18,9 +18,14 @@ pygmentCodeFences = true
   dateFormat = "January 2, 2006"
   commit = false
   rss = true
-  comments = true
   description = "imroc.io|roc的博客|Cloud Native|Kubernetes|Go|Golang"
 
+[Params.comments.github]
+owner = "imroc" # github account
+repo = "imroc.github.io" # the repo in your github account which comments data would be submitted into it's issue
+# client_id and client_secret could be created by: Settings-Developer settings-OAuth Apps-New OAuth app
+client_id = "d05b8f959b3111c6fb63"
+client_secret = "f30ef76ea0050ed731ace76f7fbf684ae5d28fbc"
 
 [[Params.bigimg]]
 src = "https://res.cloudinary.com/imroc/image/upload/v1515849754/blog/banner/hacker.jpg"
