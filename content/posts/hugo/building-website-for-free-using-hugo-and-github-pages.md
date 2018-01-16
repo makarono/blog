@@ -223,7 +223,7 @@ github 给我们提供了免费域名，但是我们还可以绑定自己的域
 
 <img src="https://imroc.io/static/blog/hugo/cloudflare-crypto-full.png" />  
   
-- 配置 Page Rules：加入一条规则，举例： `http://jimmysong.io/*` 设置为 `Always Use HTTPS`  
+- 配置 Page Rules：加入一条规则，举例： `http://imroc.io/*` 设置为 `Always Use HTTPS`  
   
 <img src="https://imroc.io/static/blog/hugo/cloudflare-always-https.png" />
 
