@@ -6,7 +6,7 @@ tags: ["hugo"]
 draft: false
 ---
 ## 概述
-Hugo可以让你轻松生成静态网站，比如个人博客、API文档、公司主页等，你只需要提供markdown格式的文本，它就能帮你渲染成各种你想要的样式，只需要安装想要的主题，写好对于的markdown内容，就能快速编译出一个静态网站。
+Hugo可以让你轻松生成静态网站，比如个人博客、API文档、公司主页等，你只需要提供markdown格式的文本，它就能帮你渲染成各种你想要的样式，只需要安装想要的主题，写好对应的markdown内容，就能快速编译出一个静态网站。
 
 ## 安装hugo
 参考官方：http://gohugo.io/getting-started/installing/
