@@ -86,7 +86,8 @@ hugo -d docs
 ## Github Pages
 Github Pages 是 Github 推出的一项功能，可以免费托管静态网站，将你的静态文件放在仓库里，然后在仓库的 `Settings` 里面，翻到下面的 `GitHub Pages` 部分，可以将此仓库设置为你的静态网站文件的存放仓库。  
   
-其实 `Github Pages` 仓库分为两种。
+其实 `Github Pages` 仓库分为两种。  
+
 - 一种是主仓库，它里面存放的文件可以直接映射到你网站的根路径，而且只能有一个仓库名固定为：`<github账号名>.github.io`，比如我的 github 账号为 `imroc`,那么我的 `Github Pages` 主仓库就为 `imroc.github.io`，这个仓库的名字其实也就是访问你网站的域名。
 - 其它的仓库只能映射到网站的子路径，子路径名称和仓库名一致，比如我新建一个 `static` 仓库并设置为 `Github Pages` 仓库，那么我可以通过 `imroc.github.io/static/` 访问到里面的页面和文件
 
