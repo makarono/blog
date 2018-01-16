@@ -154,7 +154,7 @@ chmod +x deploy.sh
   
 进入hugo创建的网站目录并设置 git 的远程地址：
 ``` bash
-cd blog
+cd mysite
 git remote add origin https://github.com/imroc/blog.git
 ```
 将 `Github Pages` 的仓库下载到当前目录并命名 `public`：
