@@ -92,7 +92,7 @@ Github Pages 是 Github 推出的一项功能，可以免费托管静态网站�
 - 其它的仓库只能映射到网站的子路径，子路径名称和仓库名一致，比如我新建一个 `static` 仓库并设置为 `Github Pages` 仓库，那么我可以通过 `imroc.github.io/static/` 访问到里面的页面和文件
 
 ## 设置 Github Pages
-静态文件存放位置有三种：  
+静态文件存放位置有三种：
 
 - master 分支
 - master 分支下 docs 目录 
@@ -103,8 +103,6 @@ Github Pages 是 Github 推出的一项功能，可以免费托管静态网站�
 一般都会先新建第一种 `Github Pages` 主仓库作为网站主要托管，根据你的账号名创建仓库，如: `imroc.github.io`， 提交静态文件后在仓库的 `Settings` 里面，翻到下面的 `Github Pages` 部分，根据自己需要设置 `Github Pages` 文件存放位置：
 ![github pages 设置](https://imroc.io/static/blog/hugo/github-pages-setting.png)
   
-**注：** `gh-pages` 分支选项需要在此分支存在的情况下才会显示次选项  
-
 ### 源文件与编译结果在同一仓库
 如果你想要将你网站的 `hugo` 源文件和编译后的静态文件目录放在一个仓库，那可以选择 `master` 下的 `docs` 目录作为 `Github Pages` 目录，编译的时候执行：
 ``` bash
