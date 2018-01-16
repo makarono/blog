@@ -94,10 +94,14 @@ Github Pages 是 Github 推出的一项功能，可以免费托管静态网站�
 - master 分支下 docs 目录 
 - gh-pages 分支(前提是这个分支存在才会显示)
 
+**注：** `Github Pages` 主仓库除外，必须是 master 分支。
+
 一般都会先新建第一种 `Github Pages` 主仓库作为网站主要托管，根据你的账号名创建仓库，如: `imroc.github.io`， 提交静态文件后在仓库的 `Settings` 里面，翻到下面的 `Github Pages` 部分，根据自己需要设置 `Github Pages` 文件存放位置：
 ![github pages 设置](https://imroc.io/static/blog/hugo/github-pages-setting.png)
 **注：** `gh-pages` 分支选项需要在此分支存在的情况下才会显示次选项  
-1. 如果你想要将你网站的 `hugo` 源文件和编译后的静态文件目录放在一个仓库，那可以选择 `master` 下的 `docs` 目录作为 `Github Pages` 目录，编译的时候执行：
+
+### 源文件与编译结果在同一仓库
+如果你想要将你网站的 `hugo` 源文件和编译后的静态文件目录放在一个仓库，那可以选择 `master` 下的 `docs` 目录作为 `Github Pages` 目录，编译的时候执行：
 ``` bash
 hugo -d docs
 ```
@@ -142,3 +146,55 @@ git push origin master
 ``` bash
 chmod +x deploy.sh
 ```
+
+### 源文件与编译结果在不同仓库
+新建一个仓库存放源文件（此仓库不需要设置 `Github Pages`)，如 `blog` 仓库，编译结果放在主仓库里，如 `imroc.github.io` 仓库。  
+  
+进入hugo创建的网站目录并设置 git 的远程地址：
+``` bash
+cd blog
+git remote add origin https://github.com/imroc/blog.git
+```
+将 `Github Pages` 的仓库下载到当前目录并命名 `public`：
+``` bash
+git clone https://github.com/imroc/imroc.github.io.git
+mv imroc.github.io public
+```
+新增脚本 (`deploy.sh`):
+``` bash
+#! /bin/bash
+
+set -eux 
+
+echo -e "\033[0;32mDeploying updates to GitHub...\033[0m"
+
+msg="rebuilding site `date`"
+if [ $# -eq 1  ]
+    then msg="$1"
+fi
+
+# Build the project. 
+hugo # if using a theme, replace by `hugo -t <yourtheme>`
+
+# Go To Public folder
+cd public
+
+# Add changes to git.
+git add .
+
+# Commit changes.
+git commit -m "$msg"
+
+# Push source and build repos.
+git push origin master
+
+# Come Back
+cd ..
+
+git add .
+git commit -m "$msg"
+git push origin master
+```
+这样执行脚本也可以更新网站，只不过分成了两个仓库，我也是用的这种做法，因为 `Github Pages` 主仓库只允许 master 分支作为网站内容，所以源文件就存在了另一个仓库 `blog`
+
+## 自定义域名
