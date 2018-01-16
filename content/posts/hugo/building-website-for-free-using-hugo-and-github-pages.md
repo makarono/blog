@@ -202,11 +202,27 @@ git push origin master
 // TODO  
   
 ## 自定义域名
-github 给我们提供了免费域名，但是我们还可以绑定自己的域名。
+github 给我们提供了免费域名，但是我们还可以绑定自己的域名。  
+  
+很简单，在仓库的 `Settings` 里的 `Github Pages` 部分，有个 `Custom domain` 的设置，将其设置为你需要绑定的域名（它会新建一个 commit，就是创建一个 `CNAME` 文件，内容是你填的域名），你也可以自己手动创建一个 CNAME 文件，效果是一样的。  
+  
+下一步就是登录你的域名提供商的后台管理，设置DNS解析：
 ### 绑定根域名
-如果你想要绑定自己域名的根域名，如：[imroc.io](imroc.io)
+如果你想要绑定自己域名的根域名（如：[imroc.io](imroc.io)），新建两个A记录，分别指向下面两个IP：
+> 192.30.252.153  
+> 192.30.252.154  
+
 ### 绑定二级域名
-如果你想要绑定自己域名的二级域名，如：[blog.imroc.io](blog.imroc.io)
+如果你想要绑定自己域名的二级域名（如：[blog.imroc.io](blog.imroc.io)），新建一个 `CNAME` 记录，值为你的 github 域名，如： `imroc.github.io`
 
 ## 自定义域名开启https
-如果绑定了自定义域名，github pages 原则上是不能启用https的，但是可以借助 cloudflare 实现自定义域名也能开启https
+如果绑定了自定义域名，github pages 原则上是不能启用https的，但是可以借助 cloudflare  
+  
+- 在[cloudflare](https://www.cloudflare.com/)上注册并获得 `nameserver`
+- 在域名注册机构的后台管理页面将  `nameservers` 设置为 `cloudflare` 上的（即让 `cloudflare` 来管理 dns） 
+- 确保 `Crypto`-`SSL` 为 `Full`
+<img src="https://imroc.io/static/blog/hugo/cloudflare-crypto-full.png" />
+- 配置 Page Rules：加入一条规则，举例： `http://jimmysong.io/*` 设置为 `Always Use HTTPS`
+<img src="https://imroc.io/static/blog/hugo/cloudflare-always-https.png" />
+
+> 最后等待一段时间生效
