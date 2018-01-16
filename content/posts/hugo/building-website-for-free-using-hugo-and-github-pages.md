@@ -2,7 +2,7 @@
 title: "利用Hugo和Github Pages免费创建并永久托管网站"
 description: "教你如何免费建立自己的网站"
 bigimg: [{src: "https://imroc.io/static/blog/hugo/hugo-github.png", desc: "Hugo + Github Pages"}]
-date: 2018-01-16T17:00:06+08:00
+date: 2018-01-16T20:35:06+08:00
 categories: ["hugo"]
 tags: ["hugo"]
 draft: false
