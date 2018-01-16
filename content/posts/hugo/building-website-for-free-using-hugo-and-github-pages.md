@@ -99,6 +99,7 @@ Github Pages 是 Github 推出的一项功能，可以免费托管静态网站�
 
 一般都会先新建第一种 `Github Pages` 主仓库作为网站主要托管，根据你的账号名创建仓库，如: `imroc.github.io`， 提交静态文件后在仓库的 `Settings` 里面，翻到下面的 `Github Pages` 部分，根据自己需要设置 `Github Pages` 文件存放位置：
 ![github pages 设置](https://imroc.io/static/blog/hugo/github-pages-setting.png)
+  
 **注：** `gh-pages` 分支选项需要在此分支存在的情况下才会显示次选项  
 
 ### 源文件与编译结果在同一仓库
@@ -198,4 +199,14 @@ git push origin master
 ```
 这样执行脚本也可以更新网站，只不过分成了两个仓库，我也是用的这种做法，因为 `Github Pages` 主仓库只允许 master 分支作为网站内容，所以源文件就存在了另一个仓库 `blog`
 
+// TODO  
+  
 ## 自定义域名
+github 给我们提供了免费域名，但是我们还可以绑定自己的域名。
+### 绑定根域名
+如果你想要绑定自己域名的根域名，如：[imroc.io](imroc.io)
+### 绑定二级域名
+如果你想要绑定自己域名的二级域名，如：[blog.imroc.io](blog.imroc.io)
+
+## 自定义域名开启https
+如果绑定了自定义域名，github pages 原则上是不能启用https的，但是可以借助 cloudflare 实现自定义域名也能开启https
