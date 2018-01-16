@@ -198,8 +198,6 @@ git commit -m "$msg"
 git push origin master
 ```
 这样执行脚本也可以更新网站，只不过分成了两个仓库，我也是用的这种做法，因为 `Github Pages` 主仓库只允许 master 分支作为网站内容，所以源文件就存在了另一个仓库 `blog`
-
-// TODO  
   
 ## 自定义域名
 github 给我们提供了免费域名，但是我们还可以绑定自己的域名。  
@@ -209,6 +207,7 @@ github 给我们提供了免费域名，但是我们还可以绑定自己的域
 下一步就是登录你的域名提供商的后台管理，设置DNS解析：
 ### 绑定根域名
 如果你想要绑定自己域名的根域名（如：[imroc.io](imroc.io)），新建两个A记录，分别指向下面两个IP：
+  
 > 192.30.252.153  
 > 192.30.252.154  
 
@@ -220,9 +219,12 @@ github 给我们提供了免费域名，但是我们还可以绑定自己的域
   
 - 在[cloudflare](https://www.cloudflare.com/)上注册并获得 `nameserver`
 - 在域名注册机构的后台管理页面将  `nameservers` 设置为 `cloudflare` 上的（即让 `cloudflare` 来管理 dns） 
-- 确保 `Crypto`-`SSL` 为 `Full`
-<img src="https://imroc.io/static/blog/hugo/cloudflare-crypto-full.png" />
-- 配置 Page Rules：加入一条规则，举例： `http://jimmysong.io/*` 设置为 `Always Use HTTPS`
+- 确保 `Crypto`-`SSL` 为 `Full`  
+
+<img src="https://imroc.io/static/blog/hugo/cloudflare-crypto-full.png" />  
+  
+- 配置 Page Rules：加入一条规则，举例： `http://jimmysong.io/*` 设置为 `Always Use HTTPS`  
+  
 <img src="https://imroc.io/static/blog/hugo/cloudflare-always-https.png" />
 
 > 最后等待一段时间生效
