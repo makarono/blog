@@ -43,24 +43,30 @@ desc = "Cloud Computing"
     identifier = "Categories"
     name = "Categories"
     weight = 1
+    
+[[menu.main]]
+    parent = "Categories"
+    name = "kubernetes"
+    url = "categories/kubernetes"
+    weight = 1
 
 [[menu.main]]
     parent = "Categories"
     name = "docker"
     url = "categories/docker"
-    weight = 1
+    weight = 2
 
 [[menu.main]]
     parent = "Categories"
     name = "golang"
     url = "categories/golang"
-    weight = 2
+    weight = 3
 
 [[menu.main]]
     parent = "Categories"
     name = "架构"
     url = "categories/arch"
-    weight = 3
+    weight = 4
 
 [[menu.main]]
     name = "Books"
