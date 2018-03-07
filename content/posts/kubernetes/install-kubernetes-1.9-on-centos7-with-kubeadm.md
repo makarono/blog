@@ -341,5 +341,29 @@ journalctl -xef -u kubelet -n 20
 ``` bash
 kubectl apply -f https://raw.githubusercontent.com/coreos/flannel/v0.9.1/Documentation/kube-flannel.yml
 ```
+看看集群状态
+``` bash
+[root@roc ~]# kubectl get cs
+NAME                 STATUS    MESSAGE              ERROR
+scheduler            Healthy   ok
+controller-manager   Healthy   ok
+etcd-0               Healthy   {"health": "true"}
+```
 
+## worker 节点加入
+下载需要的镜像
+``` bash
+docker pull docker.io/gcrio/hyperkube:v1.9.3
 
+docker pull docker.io/gcrio/pause-amd64:3.0
+docker tag docker.io/gcrio/pause-amd64:3.0 gcr.io/google_containers/pause-amd64:3.0
+docker rmi docker.io/gcrio/pause-amd64:3.0
+```
+将之前保存的 kubeadm join 命令粘贴过来
+``` bash
+kubeadm join --token 0e78a0.38a53399a9489d52 172.17.60.67:6443 --discovery-token-ca-cert-hash sha256:038654a3d0adb79978913e5d2bce191b5d8536feac7d9354ca35b348e9fc4cd5
+```
+在master上看看集群节点
+``` bash
+kubectl get nodes
+```
