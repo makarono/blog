@@ -96,13 +96,14 @@ yum install -y docker
 ```
 
 #### 使用overlay2驱动
-docker 存储驱动很多默认用devicemapper，存在很多问题，最好使用overlay2，内核版本小于 3.10.0-693 的不要使用 overlay2 驱动。
+docker 存储驱动很多默认用devicemapper，存在很多问题，最好使用overlay2，内核版本小于 3.10.0-693 的不要使用 overlay2 驱动。  
+  
 确保 yum-plugin-ovl 安装，解决 ovlerlay2 兼容性问题：
 ``` bash
 yum install -y yum-plugin-ovl
 ```
-- overlay2 兼容性问题详见：[https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility](https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility)  ：
-
+- overlay2 兼容性问题详见：[https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility](https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility)  ：  
+  
 备份 docker 用到的目录（若需要）
 ``` bash
 cp -au /var/lib/docker /var/lib/docker.bk
@@ -120,7 +121,7 @@ vi /etc/docker/daemon.json
   "storage-driver": "overlay2"
 }
 ```
-如果使用 Docker EE 并且版本大于 17.06，还需要一个 `storage-opts`，这样配置 ：
+如果使用 Docker EE 并且版本大于 17.06，还需要一个 `storage-opts`，这样配置
 ``` json
 {
   "storage-driver": "overlay2",
