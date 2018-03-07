@@ -1,7 +1,8 @@
 ---
 title: "国内使用Kubeadm在CentOS 7上安装Kubernetes 1.9"
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1515849764/blog/banner/kubernetes.png", desc: "Kubernetes"}]
 date: 2018-03-07T23:35:11+08:00
-subtitle: "Self Hosting方式安装，ipvs替代iptables，CoreDNS替代kube-dns"
+subtitle: "Self Hosting，ipvs替代iptables，CoreDNS替代kube-dns"
 categories: ["kubernetes"]
 tags: ["docker", "kubernetes", "kubeadm"]
 ---
