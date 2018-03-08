@@ -98,13 +98,13 @@ yum install -y docker
 
 #### 使用overlay2驱动
 docker 存储驱动很多默认用devicemapper，存在很多问题，最好使用overlay2，内核版本小于 3.10.0-693 的不要使用 overlay2 驱动。  
-  
+
 确保 yum-plugin-ovl 安装，解决 ovlerlay2 兼容性问题：
 ``` bash
 yum install -y yum-plugin-ovl
 ```
 - overlay2 兼容性问题详见：[https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility](https://docs.docker.com/storage/storagedriver/overlayfs-driver/#limitations-on-overlayfs-compatibility)  ：  
-  
+
 备份 docker 用到的目录（若需要）
 ``` bash
 cp -au /var/lib/docker /var/lib/docker.bk
@@ -208,7 +208,14 @@ kubeadm.x86_64                   1.9.3-0                    kubernetes
 ``` bash
 yum install -y kubelet-1.9.3-0 kubeadm-1.9.3-0 kubectl-1.9.3-0
 ```
+kubelet设置开机自动运行
+
+```bash
+systemctl enable kubelet
+```
+
 kubelet启动参数增加  `--runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice` 防止kubelet报错
+
 ``` bash
 vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
@@ -216,15 +223,20 @@ vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ``` bash
 Environment="KUBELET_CGROUP_ARGS=--cgroup-driver=systemd --runtime-cgroups=/systemd/system.slice --kubelet-cgroups=/systemd/system.slice"
 ```
-然后reload
+然后reload并启动kubelet
+
 ``` bash
 systemctl daemon-reload
+systemctl start kubelet
 ```
 
+
+
 ## 初始化master
+
 国内快速下载镜像（假设docker配了加速器）
 ``` bash
-docker pull docker.io/k8smirror:v0.9.1-amd64
+docker pull docker.io/k8smirror/flannel:v0.9.1-amd64
 docker tag docker.io/k8smirror/flannel:v0.9.1-amd64 quay.io/coreos/flannel:v0.9.1-amd64
 docker rmi docker.io/k8smirror/flannel:v0.9.1-amd64
 
@@ -351,7 +363,23 @@ controller-manager   Healthy   ok
 etcd-0               Healthy   {"health": "true"}
 ```
 
+使用kubeadm初始化的集群，出于安全考虑Pod不会被调度到Master Node上，可使用如下命令使Master节点参与工作负载
+
+``` bash
+kubectl taint nodes --all node-role.kubernetes.io/master-
+```
+
+输出类似下面（报错可忽略）
+
+``` bash
+node "roc" untainted
+error: taint "node-role.kubernetes.io/master:" not found
+```
+
+
+
 ## worker 节点加入
+
 下载需要的镜像
 ``` bash
 docker pull docker.io/gcrio/hyperkube:v1.9.3
