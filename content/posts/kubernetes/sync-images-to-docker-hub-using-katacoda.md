@@ -1,5 +1,6 @@
 ---
 title: "利用Katacoda免费同步Docker镜像到Docker Hub"
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1520576438/blog/k8s/dark-shadows.jpg", desc: "Katacoda"}]
 date: 2018-03-09T10:39:17+08:00
 subtitle: "无需买服务器，脚本批量同步"
 categories: ["kubernetes"]
