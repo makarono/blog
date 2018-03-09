@@ -377,7 +377,6 @@ error: taint "node-role.kubernetes.io/master:" not found
 ```
 
 
-
 ## worker 节点加入
 
 下载需要的镜像
