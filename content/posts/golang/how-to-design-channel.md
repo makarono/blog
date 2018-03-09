@@ -2,6 +2,7 @@
 title: "go的channel是如何设计的"
 date: 2018-01-24T08:57:24+08:00
 subtitle: ""
+draft: true
 categories: "golang"
 tags: [ "golang" ]
 ---
