@@ -1,5 +1,6 @@
 ---
 title: "kubernetes源码阅读笔记：理清 kube-apiserver 的源码主线"
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1520826775/blog/k8s/Banner-Hacker.png", desc: "hacker"}]
 date: 2018-03-12T11:47:19+08:00
 subtitle: ""
 categories: ["kubernetes"]
