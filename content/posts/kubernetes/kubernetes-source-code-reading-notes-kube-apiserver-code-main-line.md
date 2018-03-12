@@ -13,7 +13,8 @@ tags: ["kubernetes" ]
 ## 开始
 k8s各组件main包在cmd目录下，即各个程序的入口处，来看看 `kube-apiserver` 的源码
 
-**注：** 三点代表省略的代码，只关注主要的代码，让思路更清晰
+**注：** 三点代表省略的代码，只关注主要的代码，让思路更清晰  
+  
 `cmd/kube-apiserver/apiserver.go`
 ``` go
 func main() {
