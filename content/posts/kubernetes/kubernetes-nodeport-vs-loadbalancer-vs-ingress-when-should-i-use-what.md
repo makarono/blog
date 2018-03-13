@@ -38,11 +38,11 @@ spec:
 $ kubectl proxy --port=8080
 ```
 现在，你可以使用如下的 Kubernetes API 访问服务：
-```
+``` bash
 http://localhost:8080/api/v1/proxy/namespaces/<NAMESPACE>/services/<SERVICE-NAME>:<PORT-NAME>/
 ```
 所以，如果要访问我们刚刚定义的服务，可以使用下面的地址：
-```
+``` bash
 http://localhost:8080/api/v1/proxy/namespaces/default/services/my-internal-service:http/
 ```
 
@@ -86,7 +86,7 @@ spec:
 
 ## LoadBalancer
 LoadBalancer 服务暴露服务的标准方式。 在 GKE 上，这将启动一个[网络负载平衡器](https://cloud.google.com/compute/docs/load-balancing/network/)，它将为您提供一个将所有流量转发到您的服务的IP地址。
-<img src="http://res.cloudinary.com/imroc/image/upload/v1520949676/blog/k8s/kubernetes-loadbalancer.png">
+<img src="https://res.cloudinary.com/imroc/image/upload/v1520949676/blog/k8s/kubernetes-loadbalancer.png">
 ### 什么时候用？
 如果你想直接暴露一个服务，这是默认的方法(GKE上)。 您指定的端口上的所有流量都将被转发到该服务， 没有过滤、路由等。这意味着您可以发送几乎任何类型的流量，如 HTTP，TCP，UDP，Websockets，gRPC 或其他。
 
