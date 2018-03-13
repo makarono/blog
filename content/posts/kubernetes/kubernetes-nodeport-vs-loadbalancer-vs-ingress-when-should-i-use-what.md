@@ -1,5 +1,5 @@
 ---
-title: "对比Kubernetes的Nodeport、Loadbalancer和Ingress，考虑什么时候该用哪种"
+title: "对比Kubernetes的Nodeport、Loadbalancer和Ingress，什么时候该用哪种"
 bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1520952425/blog/k8s/scifi-banner.jpg", desc: "ingress"}]
 date: 2018-03-13T22:45:26+08:00
 categories: ["kubernetes"]
