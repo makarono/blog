@@ -55,8 +55,6 @@ http://localhost:8080/api/v1/proxy/namespaces/default/services/my-internal-servi
 由于此方法要求您用已授权用户运行 kubectl ，因此您不应该使用此方法将您的服务公开到公网上或将其用于生产。
 
 ## NodePort
-A NodePort service is the most primitive way to get external traffic directly to your service. NodePort, as the name implies, opens a specific port on all the Nodes (the VMs), and any traffic that is sent to this port is forwarded to the service.
-
 NodePort 服务是暴露服务的最原始方式。 顾名思义，NodePort 会在所有节点（VM）上打开一个特定的端口，并且发送到此端口的任何流量都将转发到该服务。
 <img src="https://res.cloudinary.com/imroc/image/upload/v1520948622/blog/k8s/kubernetes-nodeport.png">
 NodePort 服务的 YAML 类似这样：
