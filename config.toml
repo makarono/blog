@@ -13,7 +13,7 @@ pygmentCodeFences = true
 [Params]
   hello = "Hi,I'm Roc"
   # subtitle = "I'm ROC"
-  logo = "images/logo.png"
+  logo = "https://res.cloudinary.com/imroc/image/upload/v1521031841/avatar.png"
   favicon = "favicon.png"
   dateFormat = "January 2, 2006"
   commit = false
