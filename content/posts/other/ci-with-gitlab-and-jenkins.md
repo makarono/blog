@@ -1,5 +1,6 @@
 ---
 title: "利用Gitlab和Jenkins做CI(持续集成)"
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1523629988/blog/ci/jenkins-banner.png", desc: "jenkins"}]
 date: 2018-04-13T22:23:22+08:00
 tags: ["CI"]
 ---
