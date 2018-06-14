@@ -32,7 +32,9 @@ mkdir config logs data
 准备启动脚本 （替换想要的启动端口，ip 地址替换为访问你的 gitlab 的地址，也可以替换想要的挂载目录）
 
 ``` bash
-cat << EOF > run
+vi run
+```
+``` bash
 #! /bin/bash
 
 sudo docker run -d --rm \
@@ -44,7 +46,9 @@ sudo docker run -d --rm \
     -v $PWD/data:/var/opt/gitlab \
     gitlab/gitlab-ee:latest
 EOF
-
+```
+赋予执行权限
+``` bash
 chmod +x run
 ```
 
