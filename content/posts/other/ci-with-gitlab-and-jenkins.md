@@ -283,4 +283,9 @@ $ cat .gitmodules
 	branch = v1
 ```
 
-可以自己手动编辑或用 `git submodule add` 命令生成
+可以自己手动编辑或用 `git submodule add` 命令生成  
+  
+  
+  
+  
+我的博客即将搬运同步至腾讯云+社区，邀请大家一同入驻：https://cloud.tencent.com/developer/support-plan?invite_code=2yygiminmy2ok
