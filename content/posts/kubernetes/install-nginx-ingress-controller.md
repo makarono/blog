@@ -1,7 +1,6 @@
 ---
-title: "安装 Nginx Ingress Controller"
+title: "使用 Nginx Ingress Controller 导入外部流量到 Kubernetes 集群内部"
 date: 2018-07-23T14:29:37+08:00
-subtitle: "暴露 Kubernetes 服务到公网"
 categories: ["kubernetes"]
 tags: ["kubernetes"]
 ---
@@ -10,7 +9,7 @@ tags: ["kubernetes"]
 
 Nginx Ingress Controller 是 Kubernetes Ingress Controller 的一种实现，作为反向代理将外部流量导入集群内部，实现将 Kubernetes 内部的 Service 暴露给外部，这样我们就能通过公网或内网直接访问集群内部的服务。本文使用 Helm 来安装，所以请确保 Helm 已安装，安装方法参考：https://imroc.io/posts/kubernetes/install-helm/
 
-## 暴露流量的方式
+## 导入流量的方式
 
 要想暴露内部流量，就需要让 Ingress Controller 自身能够对外提供服务，主要有以下两种方式：
 
@@ -22,7 +21,7 @@ Nginx Ingress Controller 是 Kubernetes Ingress Controller 的一种实现，作
   优点：免费  
   缺点：没有高可用保证，如果需要高可用就得自己去搞
 
-### 使用 LoadBalancer 暴露流量
+### 使用 LoadBalancer 导入流量
 
 这种方式部署 Nginx Ingress Controller 最简单，只要保证上面说的前提：集群有 Cloud Provider 并且支持 LoadBalancer，如果你是使用云厂商的 Kubernetes 集群，保证你集群所使用的云厂商的账号有足够的余额，执行下面的命令一键安装：
 
@@ -42,7 +41,7 @@ nginx-ingress-controller        LoadBalancer   10.3.255.138   119.28.121.125   8
 
 `EXTERNAL-IP` 就是我们需要的外部 IP 地址，通过访问它就可以访问到集群内部的服务了，我们可以将想要的域名配置这个IP的DNS记录，这样就可以直接通过域名来访问了。具体访问哪个 Service, 这个就是我们创建的 Ingress 里面所配置规则的了，可以通过匹配请求的 Host 和 路径这些来转发到不同的后端 Service.
 
-## 使用 DeamonSet + hostPort 暴露流量
+## 使用 DeamonSet + hostPort 导入流量
 
 这种方式实际是使用集群内的某些节点来暴露流量，使用 DeamonSet 部署，保证让符合我们要求的节点都会启动一个 Nginx 的 Ingress Controller 来监听端口，这些节点我们叫它 `边缘节点`，因为它们才是真正监听端口，让外界流量进入集群内部的节点，这里我使用集群内部的一个节点来暴露流量，它有自己的公网 IP 地址，并且 80 和 443 端口没有被其它占用。
 
