@@ -14,16 +14,12 @@ Nginx Ingress Controller 是 Kubernetes Ingress Controller 的一种实现，作
 
 要想暴露内部流量，就需要让 Ingress Controller 自身能够对外提供服务，主要有以下两种方式：
 
-- Ingress Controller 使用 Deployment 部署，Service 类型指定为 LoadBalancer
-
-  优点：最简单
-
+- Ingress Controller 使用 Deployment 部署，Service 类型指定为 LoadBalancer  
+  优点：最简单  
   缺点：需要集群有 Cloud Provider 并且支持 LoadBalancer, 一般云厂商托管的 kubernetes 集群支持，并且使用 LoadBalancer 是付费的，因为他会给你每个 LoadBalancer 类型的 Service 分配公网 IP 地址
 
-- Ingress Controller 使用 DeamonSet 部署，Pod 指定 hostPort 来暴露端口
-
-  优点：免费
-
+- Ingress Controller 使用 DeamonSet 部署，Pod 指定 hostPort 来暴露端口   
+  优点：免费  
   缺点：没有高可用保证，如果需要高可用就得自己去搞
 
 ### 使用 LoadBalancer 暴露流量
