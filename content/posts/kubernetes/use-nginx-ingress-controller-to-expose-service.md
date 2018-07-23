@@ -1,5 +1,5 @@
 ---
-title: "使用 Nginx Ingress Controller 导入外部流量到 Kubernetes 集群内部"
+title: "使用Nginx Ingress Controller导入外部流量到Kubernetes集群内部"
 date: 2018-07-23T14:29:37+08:00
 categories: ["kubernetes"]
 tags: ["kubernetes"]
