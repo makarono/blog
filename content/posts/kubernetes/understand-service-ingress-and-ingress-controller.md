@@ -1,7 +1,7 @@
 ---
 title: "通俗理解Kubernetes中Service、Ingress与Ingress Controller的作用与关系"
 date: 2018-07-24T22:19:37+08:00
-bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1532442988/blog/banner/kubernetes-google.jpg", desc: "Kubernetes"}]
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1532443335/blog/banner/scifi1.jpg", desc: "Scifi"}]
 categories: ["kubernetes"]
 tags: ["kubernetes"]
 ---
