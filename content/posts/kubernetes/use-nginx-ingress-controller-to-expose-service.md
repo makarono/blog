@@ -1,6 +1,7 @@
 ---
 title: "使用Nginx Ingress Controller导入外部流量到Kubernetes集群内部"
 date: 2018-07-23T14:29:37+08:00
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1532442992/blog/banner/matrix.jpg", desc: "Matrix"}]
 categories: ["kubernetes"]
 tags: ["kubernetes"]
 ---

@@ -1,6 +1,7 @@
 ---
 title: "利用Helm一键部署Kubernetes Dashboard并启用免费HTTPS"
 date: 2018-07-23T21:49:54+08:00
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1532442991/blog/banner/dashboard.jpg", desc: "Dashboard"}]
 categories: ["kubernetes"]
 tags: ["kubernetes"]
 ---

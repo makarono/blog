@@ -1,6 +1,7 @@
 ---
 title: "利用cert-manager让Ingress启用免费的HTTPS证书"
 date: 2018-07-23T20:08:01+08:00
+bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1532442989/blog/banner/blue-number.jpg", desc: "cert"}]
 categories: ["kubernetes"]
 tags: ["kubernetes"]
 ---
