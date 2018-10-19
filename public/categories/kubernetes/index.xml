@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Kubernetes on roc</title>
+    <link>https://imroc.io/categories/kubernetes/</link>
+    <description>Recent content in Kubernetes on roc</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <managingEditor>roc@imroc.io (roc)</managingEditor>
+    <webMaster>roc@imroc.io (roc)</webMaster>
+    <lastBuildDate>Tue, 24 Jul 2018 22:19:37 +0800</lastBuildDate>
+    
+	<atom:link href="https://imroc.io/categories/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>通俗理解Kubernetes中Service、Ingress与Ingress Controller的作用与关系</title>
+      <link>https://imroc.io/posts/kubernetes/understand-service-ingress-and-ingress-controller/</link>
+      <pubDate>Tue, 24 Jul 2018 22:19:37 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/understand-service-ingress-and-ingress-controller/</guid>
+      <description>通俗的讲: Service 是后端真实服务的抽象，一个 Service 可以代表多个相同的后端服务 Ingress 是反向代理规则，用来规定 HTTP/S 请求应该被转发到哪个 Service 上，比如根据请求中不同的</description>
+    </item>
+    
+    <item>
+      <title>利用Helm一键部署Kubernetes Dashboard并启用免费HTTPS</title>
+      <link>https://imroc.io/posts/kubernetes/deploy-kubernetes-dashboard-and-enable-free-https/</link>
+      <pubDate>Mon, 23 Jul 2018 21:49:54 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/deploy-kubernetes-dashboard-and-enable-free-https/</guid>
+      <description>概述 Kubernetes Dashboard 是一个可以可视化查看和操作 Kubernetes 集群的一个插件 本文利用 Helm 部署它，所以请确保 Helm 已安装，安装方法参考：https://imroc.io/po</description>
+    </item>
+    
+    <item>
+      <title>利用cert-manager让Ingress启用免费的HTTPS证书</title>
+      <link>https://imroc.io/posts/kubernetes/let-ingress-enable-free-https-with-cert-manager/</link>
+      <pubDate>Mon, 23 Jul 2018 20:08:01 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/let-ingress-enable-free-https-with-cert-manager/</guid>
+      <description>概述 cert-manager 是替代 kube-lego 的一个开源项目，用于在 Kubernetes 集群中自动提供 HTTPS 证书，支持 Let’s Encrypt, HashiCorp Vault 这些免费证书的签发。 本文使用 Helm 安装，所以请确保 Helm 已安装，安装</description>
+    </item>
+    
+    <item>
+      <title>使用Nginx Ingress Controller导入外部流量到Kubernetes集群内部</title>
+      <link>https://imroc.io/posts/kubernetes/use-nginx-ingress-controller-to-expose-service/</link>
+      <pubDate>Mon, 23 Jul 2018 14:29:37 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/use-nginx-ingress-controller-to-expose-service/</guid>
+      <description>概述 Nginx Ingress Controller 是 Kubernetes Ingress Controller 的一种实现，作为反向代理将外部流量导入集群内部，实现将 Kubernetes 内部的 Service 暴露给外部，这样我们就能通过公网或内网直接访问集群内部的服</description>
+    </item>
+    
+    <item>
+      <title>快速安装 Helm</title>
+      <link>https://imroc.io/posts/kubernetes/install-helm/</link>
+      <pubDate>Mon, 23 Jul 2018 12:49:00 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/install-helm/</guid>
+      <description>概述 Helm 是 Kubernetes 的包管理器，可以帮我们简化 kubernetes 的操作，一键部署应用。假如你的机器上已经安装了 kubectl 并且能够操作集群，那么你就可以安装 Helm 了。 安装 执行脚本安</description>
+    </item>
+    
+    <item>
+      <title>对比Kubernetes的Nodeport、Loadbalancer和Ingress，什么时候该用哪种</title>
+      <link>https://imroc.io/posts/kubernetes/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what/</link>
+      <pubDate>Tue, 13 Mar 2018 22:45:26 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/kubernetes-nodeport-vs-loadbalancer-vs-ingress-when-should-i-use-what/</guid>
+      <description>本文翻译自：https://medium.com/google-cloud/kubernetes-nodeport-vs-loadbalan</description>
+    </item>
+    
+    <item>
+      <title>kubernetes源码阅读笔记：理清 kube-apiserver 的源码主线</title>
+      <link>https://imroc.io/posts/kubernetes/kubernetes-source-code-reading-notes-kube-apiserver-code-main-line/</link>
+      <pubDate>Mon, 12 Mar 2018 11:47:19 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/kubernetes-source-code-reading-notes-kube-apiserver-code-main-line/</guid>
+      <description>前言 我最近开始研究 kubernetes 源码，希望将阅读笔记记录下来，分享阅读思路和心得，更好的理解 kubernetes，这是第一篇，从 kube-apiserver 开始。 开始 k8s各组件</description>
+    </item>
+    
+    <item>
+      <title>利用Katacoda免费同步Docker镜像到Docker Hub</title>
+      <link>https://imroc.io/posts/kubernetes/sync-images-to-docker-hub-using-katacoda/</link>
+      <pubDate>Fri, 09 Mar 2018 10:39:17 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/sync-images-to-docker-hub-using-katacoda/</guid>
+      <description>为什么要同步 安装kubernetes的时候，我们需要用到 gcr.io/google_containers 下面的一些镜像，在国内是不能直接下载的。如果用 Self Host 方式安装，master 上的组件除</description>
+    </item>
+    
+    <item>
+      <title>国内使用Kubeadm在CentOS 7上安装Kubernetes 1.9</title>
+      <link>https://imroc.io/posts/kubernetes/install-kubernetes-1.9-on-centos7-with-kubeadm/</link>
+      <pubDate>Wed, 07 Mar 2018 23:35:11 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/install-kubernetes-1.9-on-centos7-with-kubeadm/</guid>
+      <description>准备 修改系统配置 开启路由转发（保证 proxy 正常运行，Service 需要） sysctl -w net.ipv4.ip_forward=1 默认情况下，由于安全原因，linux是关闭了路由转发的，即同台机器不</description>
+    </item>
+    
+    <item>
+      <title>Kubernetes程序二进制下载集合</title>
+      <link>https://imroc.io/posts/kubernetes/kubernetes-binaries/</link>
+      <pubDate>Fri, 05 Jan 2018 13:43:15 +0800</pubDate>
+      <author>roc@imroc.io (roc)</author>
+      <guid>https://imroc.io/posts/kubernetes/kubernetes-binaries/</guid>
+      <description>前言 由于国内网络的特殊性，安装Kubernetes很多时候会采用二进制方式部署，我将涉及到的二进制利用脚本传到百度云，方便大家下载，脚本开源</description>
+    </item>
+    
+  </channel>
+</rss>

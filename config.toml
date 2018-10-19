@@ -69,6 +69,12 @@ desc = "Cloud Computing"
     weight = 4
 
 [[menu.main]]
+    parent = "Categories"
+    name = "极客"
+    url = "categories/geek"
+    weight = 5
+
+[[menu.main]]
     name = "Books"
     weight = 2
 
