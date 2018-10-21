@@ -1,7 +1,7 @@
 ---
 title: "教你如何全键盘操作 Chrome 浏览器"
 subtitle: "极客打开 Chrome 的正确方式，提升效率"
-date: 2018-10-21T08:00:00+08:00
+date: 2018-10-21T23:00:00+08:00
 bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1540117965/blog/banner/chrome-banner.jpg", desc: "Chrome"}]
 categories: ["geek"]
 tags: ["geek"]
