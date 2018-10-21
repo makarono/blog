@@ -1,5 +1,6 @@
 ---
 title: "极客工具之 oh-my-zsh"
+subtitle: "让你的 shell 性感"
 date: 2018-10-20T01:35:00+08:00
 bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1539970589/blog/geek/OMZLogo_BnW.png", desc: "oh my zsh"}]
 categories: ["geek"]

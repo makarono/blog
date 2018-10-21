@@ -1,5 +1,6 @@
 ---
 title: "极客工具之 Alfred 与 Dash"
+subtitle: "效率神器，macOS 专属"
 date: 2018-10-21T07:00:00+08:00
 bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1540032242/blog/geek/alfred-and-dash.png", desc: "Alfred & Dash"}]
 categories: ["geek"]
