@@ -1,6 +1,6 @@
 ---
 title: "Kubernetes 问题定位技巧：分析 ExitCode"
-date: 2018-12-11T16:10:00+08:00
+date: 2018-12-21T16:10:00+08:00
 bigimg: [{src: "https://res.cloudinary.com/imroc/image/upload/v1515849754/blog/banner/hacker.jpg", desc: "Hacker"}]
 categories: ["kubernetes"]
 tags: ["kubernetes"]
