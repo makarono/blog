@@ -67,6 +67,12 @@ desc = "Hacker"
     weight = 5
 
 [[menu.main]]
+    parent = "Categories"
+    name = "istio"
+    url = "categories/istio"
+    weight = 5
+
+[[menu.main]]
     name = "Books"
     weight = 2
 
